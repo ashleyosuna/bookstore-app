@@ -51,7 +51,7 @@ router.put('/:id', async (req, res) => {
         const result = await Book.findByIdAndUpdate(id, req.body);
 
         if (!result) {
-            return res.status(400).send({message: 'missing required fields'});
+            return res.status(400).send({message: 'book not found'});
         }
         return res.status(200).send({message: 'update successful'});
     } catch (error) {
